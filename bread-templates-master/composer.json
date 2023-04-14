@@ -1,0 +1,47 @@
+{
+    "name": "bread-templates",
+    "description": "Templating BREAD Views",
+    "keywords": ["laravel", "launcher", "voyager", "blade", "views", "templates", "hooks"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bruno Torrinha",
+            "email": "bruno@torrinha.com"
+        }
+    ],
+    "require": {
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.0",
+        "phpunit/phpunit": "^6.2|^5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Launcher\\BreadTemplates\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Launcher\\BreadTemplates\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "hook": {
+            "providers": [
+                "Launcher\\BreadTemplates\\BreadTemplatesServiceProvider"
+            ],
+            "aliases": {
+                "Launcher\\BreadTemplates": "Launcher\\BreadTemplates\\BreadTemplatesFacade"
+            },
+            "migrations": [
+                "publishable/database/migrations"
+            ],
+            "seeders": [
+                "publishable/database/seeds/BreadTemplatesDatabaseSeeder.php"
+            ],
+            "unseeders": [
+                "publishable/database/unseeds/BreadTemplatesDatabaseUnseeder.php"
+            ]
+        }
+    }
+}
